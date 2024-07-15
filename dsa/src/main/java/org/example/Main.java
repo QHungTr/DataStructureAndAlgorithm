@@ -15,7 +15,7 @@ public class Main {
         node1=null;
         System.out.println();
         nodeManagement.traverse();
-        nodeManagement.removeNode("F");
+        nodeManagement.removeNode("L");
         System.out.println("after: ");
         nodeManagement.traverse();
     }

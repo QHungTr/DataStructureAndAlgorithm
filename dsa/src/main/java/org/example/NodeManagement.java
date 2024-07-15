@@ -51,6 +51,11 @@ public class NodeManagement {
     private void inorderTraversal(Node node){
         if (node != null) {
             inorderTraversal(node.getLeft());//recursive = de quy
+            if(last printed item ) {
+                System.out.print(node.toString() + " ");
+            } else {
+                System.out.print(node.toString() + ", ");
+            }
             System.out.print(node.toString() + ", ");
             inorderTraversal(node.getRight());
 
@@ -63,14 +68,10 @@ public class NodeManagement {
         inorderTraversal(this.rootNode);
 
     }
-
-    public void removeNode(String content) {
-        Stack<Node> stack = new Stack<>();
-        Node current = this.rootNode;
-        Node parent = null;
+    private void deleteNode(Node current, String content) {
         if(current != null) {
             if(current.getContent().equalsIgnoreCase(content)) {
-                parent = current.getParent();
+                Node parent = current.getParent();
                 if(parent != null) {
                     if(current == parent.getLeft()) {
                         parent.setLeft(null);
@@ -82,9 +83,15 @@ public class NodeManagement {
                 current.setParent(null);
                 current.setRight(null);
                 current.setLeft(null);
-                current = null;
             }
         }
+    }
+
+    public void removeNode(String content) {
+        Stack<Node> stack = new Stack<>();
+        Node current = this.rootNode;
+        deleteNode(current, content);
+
 
 
         while (current != null || !stack.isEmpty()) {
@@ -92,63 +99,17 @@ public class NodeManagement {
             while (current != null) {
                 stack.push(current);
                 current = current.getLeft();
-                if(current != null) {
-                    if(current.getContent().equalsIgnoreCase(content)) {
-                        parent = current.getParent();
-                        if(parent != null) {
-                            if(current == parent.getLeft()) {
-                                parent.setLeft(null);
-                            }
-                            if (current == parent.getRight()){
-                                parent.setRight(null);
-                            }
-                        }
-                        current.setParent(null);
-                        current.setRight(null);
-                        current.setLeft(null);
-
-                    }
-                }
+                deleteNode(current, content);
             }
 
             // Current must be null at this point
             current = stack.pop();
-            if(current != null) {
-                if(current.getContent().equalsIgnoreCase(content)) {
-                    parent = current.getParent();
-                    if(parent != null) {
-                        if(current == parent.getLeft()) {
-                            parent.setLeft(null);
-                        }
-                        if (current == parent.getRight()){
-                            parent.setRight(null);
-                        }
-                    }
-                    current.setParent(null);
-                    current.setRight(null);
-                    current.setLeft(null);
-                }
-            }
+            deleteNode(current, content);
             //System.out.print(current.getContent() + "...");
 
             // Visit the right subtree
             current = current.getRight();
-            if(current != null) {
-                if(current.getContent().equalsIgnoreCase(content)) {
-                    parent = current.getParent();
-                    if(parent != null) {
-                        if(current == parent.getLeft()) {
-                            parent.setLeft(null);
-                        }
-                        if (current == parent.getRight()){
-                            parent.setRight(null);
-                        }
-                    }
-                    current.setParent(null);
-                    current.setRight(null);
-                    current.setLeft(null);
-                }
-            }
+            deleteNode(current, content);
         }
     }
 
