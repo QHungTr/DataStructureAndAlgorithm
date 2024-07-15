@@ -3,8 +3,11 @@ package org.example;
 public class Node {
     private Node left;
     private  Node right;
+    private Node parent;
 
     private String content;
+
+
     public Node getLeft() {
         return left;
     }
@@ -34,6 +37,15 @@ public class Node {
         this.right= right;
         this.content= content;
     }
+
+    public Node getParent() {
+        return parent;
+    }
+
+    public void setParent(Node parent) {
+        this.parent = parent;
+    }
+
     //no argument constructor
     public Node (){
         this.left = null;

@@ -7,6 +7,16 @@ public class Main {
         System.out.println("This is DSA learning");
         NodeManagement nodeManagement = new NodeManagement();
         nodeManagement.createBinaryTree();
+        //nodeManagement.traverse();
+        //nodeManagement.removeNode("H");
+        Node node1 = new Node();
+        node1.setContent("1");
+        Node node2 = node1;
+        node1=null;
+        System.out.println();
+        nodeManagement.traverse();
+        nodeManagement.removeNode("F");
+        System.out.println("after: ");
         nodeManagement.traverse();
     }
 
