@@ -51,11 +51,6 @@ public class NodeManagement {
     private void inorderTraversal(Node node){
         if (node != null) {
             inorderTraversal(node.getLeft());//recursive = de quy
-            if(last printed item ) {
-                System.out.print(node.toString() + " ");
-            } else {
-                System.out.print(node.toString() + ", ");
-            }
             System.out.print(node.toString() + ", ");
             inorderTraversal(node.getRight());
 

@@ -1,5 +1,7 @@
 package org.example;
 
+import java.util.Scanner;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
@@ -18,6 +20,15 @@ public class Main {
         nodeManagement.removeNode("L");
         System.out.println("after: ");
         nodeManagement.traverse();
+        System.out.println(" ");
+        StackManagement sm = new StackManagement();
+//        String reverseString = sm.reversedString();
+//        System.out.println(reverseString);
+        System.out.println("Input a String:");
+        String input = (new Scanner(System.in)).nextLine();
+        System.out.println(sm.isValidExpression(input));
+
+
     }
 
 }
