@@ -1,5 +1,8 @@
 package org.example;
 
+import org.example.cs146.SortAlgorithms;
+import org.example.cs146.SortType;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
@@ -34,6 +37,12 @@ public class Main {
         //System.out.println(Cs146.mystery3(200,300));
           //RandomNew randomNew = new RandomNew();
           //randomNew.saveToFile("JavaA.txt");
+        SortAlgorithms sortAlgorithms = new SortAlgorithms();
+        int numberOfSamples = 100_000_000;
+        //System.out.println("Time: "+sortAlgorithms.calculateTime(SortType.SELECTION_SORT, numberOfSamples));
+        //System.out.println("Time: "+sortAlgorithms.calculateTime(SortType.INSERTION_SORT, numberOfSamples));
+        //System.out.println("Time: "+sortAlgorithms.calculateTime(SortType.QUICK_SORT, numberOfSamples));
+        System.out.println("Time: "+sortAlgorithms.calculateTime(SortType.JAVA_SORT, numberOfSamples));
 
     }
 
