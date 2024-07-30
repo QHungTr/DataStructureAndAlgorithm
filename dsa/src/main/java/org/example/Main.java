@@ -1,5 +1,7 @@
 package org.example;
 
+import org.example.cs146.Cs146;
+import org.example.cs146.LinkedList;
 import org.example.cs146.SortAlgorithms;
 import org.example.cs146.SortType;
 
@@ -42,10 +44,19 @@ public class Main {
         //System.out.println("Time: "+sortAlgorithms.calculateTime(SortType.SELECTION_SORT, numberOfSamples));
         //System.out.println("Time: "+sortAlgorithms.calculateTime(SortType.INSERTION_SORT, numberOfSamples));
         //System.out.println("Time: "+sortAlgorithms.calculateTime(SortType.QUICK_SORT, numberOfSamples));
+        /*
         while(true){
             System.out.println("Time: "+sortAlgorithms.calculateTime(SortType.JAVA_SORT, numberOfSamples));
-
         }
+        */
+        //Cs146.bubbleSort();
+        /*
+        int[] myArray = {4, 5, 6, 8, 6, 6, 7, 8, 9, 7, 9, 5, 10, 3, 2, 3};
+        Cs146.findMaxOccurenceInArray(myArray);
+         */
+        LinkedList linkedList = new LinkedList();
+        Cs146.findMaxOccurenceInArray2(linkedList);
+
     }
 
 }
