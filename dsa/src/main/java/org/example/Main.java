@@ -38,12 +38,14 @@ public class Main {
           //RandomNew randomNew = new RandomNew();
           //randomNew.saveToFile("JavaA.txt");
         SortAlgorithms sortAlgorithms = new SortAlgorithms();
-        int numberOfSamples = 100_000_000;
+        int numberOfSamples = 10_000_000;
         //System.out.println("Time: "+sortAlgorithms.calculateTime(SortType.SELECTION_SORT, numberOfSamples));
         //System.out.println("Time: "+sortAlgorithms.calculateTime(SortType.INSERTION_SORT, numberOfSamples));
         //System.out.println("Time: "+sortAlgorithms.calculateTime(SortType.QUICK_SORT, numberOfSamples));
-        System.out.println("Time: "+sortAlgorithms.calculateTime(SortType.JAVA_SORT, numberOfSamples));
+        while(true){
+            System.out.println("Time: "+sortAlgorithms.calculateTime(SortType.JAVA_SORT, numberOfSamples));
 
+        }
     }
 
 }
