@@ -2,9 +2,8 @@ package org.example.cs146;
 
 public class StudentNode {
     private Student data;
-    private
-    StudentNode next;
-
+    private StudentNode next;
+    private StudentNode previous;
     public Student getData() {
         return data;
     }
@@ -19,5 +18,13 @@ public class StudentNode {
 
     public void setNext(StudentNode next) {
         this.next = next;
+    }
+
+    public StudentNode getPrevious() {
+        return previous;
+    }
+
+    public void setPrevious(StudentNode previous) {
+        this.previous = previous;
     }
 }
